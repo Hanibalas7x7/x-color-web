@@ -816,6 +816,12 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   .product-card__color { height: 80px; }
   .product-card__body { padding: 14px; }
   .products.section { padding: 50px 0; }
+  .services__grid { grid-template-columns: 1fr; gap: 10px; }
+  .service-card { padding: 14px 16px; display: flex; flex-direction: row; align-items: flex-start; gap: 14px; }
+  .service-card__icon { font-size: 1.6rem; margin-bottom: 0; flex-shrink: 0; line-height: 1.4; }
+  .service-card h3 { font-size: 0.95rem; margin-bottom: 4px; }
+  .service-card p { font-size: 0.82rem; }
+  .services.section { padding: 50px 0; }
 }
 
 @media (max-width: 480px) {
