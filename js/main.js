@@ -201,18 +201,6 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     swatch.style.background = hex;
     swatch.setAttribute('data-ral', ral);
     swatch.setAttribute('title', `${ral} – ${hex}`);
-    swatch.setAttribute('role', 'button');
-    swatch.setAttribute('tabindex', '0');
-    swatch.setAttribute('aria-label', `Spalva ${ral}`);
-
-    // Copy RAL code on click
-    swatch.addEventListener('click', () => {
-      navigator.clipboard?.writeText(ral).catch(() => {});
-      showToast(`${ral} nukopijuota!`);
-    });
-    swatch.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') swatch.click();
-    });
 
     container.appendChild(swatch);
   });
