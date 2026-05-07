@@ -206,6 +206,31 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
   });
 })();
 
+// ── PHONE: copy on desktop, call on mobile ───────────
+(function initPhoneLinks() {
+  const isMobile = () => /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+  $$('.phone-link').forEach(link => {
+    link.addEventListener('click', e => {
+      if (!isMobile()) {
+        e.preventDefault();
+        navigator.clipboard?.writeText('+37061134692').catch(() => {});
+        showToast('Numeris nukopijuotas!');
+      }
+    });
+  });
+})();
+
+// ── EMAIL: always copy ───────────────────────────────
+(function initEmailLinks() {
+  $$('.email-link').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      navigator.clipboard?.writeText('info@xcolor.lt').catch(() => {});
+      showToast('El. paštas nukopijuotas!');
+    });
+  });
+})();
+
 // ── TOAST NOTIFICATION ───────────────────────────────
 function showToast(msg) {
   let toast = $('#xToast');
