@@ -267,11 +267,13 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 }
 .hero__title-logo {
   display: block;
-  height: 480px;
+  height: auto;
+  max-height: 480px;
   width: auto;
   max-width: 100%;
+  object-fit: contain;
   filter: brightness(0) invert(1);
-  margin: 0 auto 0;
+  margin: 0 auto;
 }
 .hero__subtitle {
   font-size: 1.1rem;
@@ -809,6 +811,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   .hero__stats { gap: 24px; }
   .footer__inner { grid-template-columns: 1fr; }
   .contact__form { padding: 28px 20px; }
+  .hero__title-logo { max-height: 220px; }
 }
 
 @media (max-width: 480px) {
@@ -816,4 +819,5 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   .services__grid { grid-template-columns: 1fr; }
   .hero__actions { flex-direction: column; align-items: flex-start; }
   .color-swatch { width: 40px; height: 40px; }
+  .hero__title-logo { max-height: 160px; }
 }
